@@ -1,3 +1,11 @@
+/*
+ * @Author: 罗华胜 luohuasheng0225@163.com
+ * @Date: 2024-07-06 14:05:42
+ * @LastEditors: 罗华胜 luohuasheng0225@163.com
+ * @LastEditTime: 2024-07-08 11:17:56
+ * @FilePath: /rustlings-semester-4-luohs/exercises/quiz3.rs
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 // quiz3.rs
 //
 // This quiz tests:
@@ -16,18 +24,26 @@
 //
 // Execute `rustlings hint quiz3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
 
-pub struct ReportCard {
-    pub grade: f32,
+
+pub struct ReportCard<T> {
+    pub grade: T,
     pub student_name: String,
     pub student_age: u8,
 }
 
-impl ReportCard {
+impl<T: std::fmt::Display> ReportCard<T> {
     pub fn print(&self) -> String {
-        format!("{} ({}) - achieved a grade of {}",
-            &self.student_name, &self.student_age, &self.grade)
+        // format!("{} ({}) - achieved a grade of {}",
+        //     &self.student_name, &self.student_age, &self.grade)
+            if (self.student_age>=12){
+                format!("{} ({}) - achieved a grade of {}",
+                &self.student_name, &self.student_age, &self.grade)
+            }
+            else{
+                format!("{} ({}) - achieved a grade of {}",
+                &self.student_name, &self.student_age, "A+")
+            }
     }
 }
 
