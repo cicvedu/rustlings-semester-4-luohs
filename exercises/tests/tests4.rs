@@ -2,7 +2,7 @@
  * @Author: 罗华胜 luohuasheng0225@163.com
  * @Date: 2024-07-06 14:05:42
  * @LastEditors: 罗华胜 luohuasheng0225@163.com
- * @LastEditTime: 2024-07-08 17:45:23
+ * @LastEditTime: 2024-07-08 17:56:31
  * @FilePath: /rustlings-semester-4-luohs/exercises/tests/tests4.rs
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -43,14 +43,16 @@ mod tests {
     }
 
     #[test]
+    #[should_panic]
     fn negative_width() {
         // This test should check if program panics when we try to create rectangle with negative width
-        let _rect = Rectangle::new(10, 10);
+        let _rect = Rectangle::new(-10, 10);
     }
 
     #[test]
+    #[should_panic]
     fn negative_height() {
         // This test should check if program panics when we try to create rectangle with negative height
-        let _rect = Rectangle::new(10, 10);
+        let _rect = Rectangle::new(10, -10);
     }
 }
