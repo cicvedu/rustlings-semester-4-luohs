@@ -1,3 +1,11 @@
+/*
+ * @Author: 罗华胜 luohuasheng0225@163.com
+ * @Date: 2024-07-06 14:05:42
+ * @LastEditors: 罗华胜 luohuasheng0225@163.com
+ * @LastEditTime: 2024-07-09 16:24:38
+ * @FilePath: /rustlings-semester-4-luohs/exercises/threads/threads1.rs
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 // threads1.rs
 //
 // This program spawns multiple threads that each run for at least 250ms, and
@@ -8,7 +16,7 @@
 // Execute `rustlings hint threads1` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
 
 use std::thread;
 use std::time::{Duration, Instant};
@@ -27,6 +35,7 @@ fn main() {
     let mut results: Vec<u128> = vec![];
     for handle in handles {
         // TODO: a struct is returned from thread::spawn, can you use it?
+        results.push(handle.join().unwrap())
     }
 
     if results.len() != 10 {
