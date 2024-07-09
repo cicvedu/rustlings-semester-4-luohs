@@ -1,3 +1,11 @@
+/*
+ * @Author: 罗华胜 luohuasheng0225@163.com
+ * @Date: 2024-07-06 14:05:42
+ * @LastEditors: 罗华胜 luohuasheng0225@163.com
+ * @LastEditTime: 2024-07-09 15:49:09
+ * @FilePath: /rustlings-semester-4-luohs/exercises/smart_pointers/cow1.rs
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 // cow1.rs
 //
 // This exercise explores the Cow, or Clone-On-Write type. Cow is a
@@ -12,7 +20,7 @@
 //
 // Execute `rustlings hint cow1` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+
 
 use std::borrow::Cow;
 
@@ -49,6 +57,8 @@ mod tests {
         let mut input = Cow::from(&slice[..]);
         match abs_all(&mut input) {
             // TODO
+            Cow::Borrowed(_) => Ok(()),
+            _ => Err("Expected borrowed value"),
         }
     }
 
@@ -61,6 +71,8 @@ mod tests {
         let mut input = Cow::from(slice);
         match abs_all(&mut input) {
             // TODO
+            Cow::Owned(_) => Ok(()),
+            _ => Err("Expected owned value"),
         }
     }
 
@@ -73,6 +85,8 @@ mod tests {
         let mut input = Cow::from(slice);
         match abs_all(&mut input) {
             // TODO
+            Cow::Owned(_) => Ok(()),
+            _ => Err("Expected owned value"),
         }
     }
 }
