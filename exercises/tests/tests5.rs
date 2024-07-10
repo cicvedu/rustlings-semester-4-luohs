@@ -1,3 +1,11 @@
+/*
+ * @Author: 罗华胜 luohuasheng0225@163.com
+ * @Date: 2024-07-06 14:05:42
+ * @LastEditors: 罗华胜 luohuasheng0225@163.com
+ * @LastEditTime: 2024-07-10 09:45:28
+ * @FilePath: /rustlings-semester-4-luohs/exercises/tests/tests5.rs
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 // tests5.rs
 //
 // An `unsafe` in Rust serves as a contract.
@@ -22,7 +30,7 @@
 // Execute `rustlings hint tests5` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
 
 /// # Safety
 ///
@@ -32,7 +40,9 @@ unsafe fn modify_by_address(address: usize) {
     // code's behavior and the contract of this function. You may use the
     // comment of the test below as your format reference.
     unsafe {
-        todo!("Your code goes here")
+        // todo!("Your code goes here");
+        let mut t = &mut *(&mut *(address as *mut u32) as *mut u32); 
+        *t=0xAABBCCDD
     }
 }
 

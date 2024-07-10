@@ -1,3 +1,11 @@
+/*
+ * @Author: 罗华胜 luohuasheng0225@163.com
+ * @Date: 2024-07-06 14:05:42
+ * @LastEditors: 罗华胜 luohuasheng0225@163.com
+ * @LastEditTime: 2024-07-10 09:57:39
+ * @FilePath: /rustlings-semester-4-luohs/exercises/tests/tests9.rs
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 // tests9.rs
 //
 // Rust is highly capable of sharing FFI interfaces with C/C++ and other statically compiled
@@ -27,14 +35,16 @@
 //
 // You should NOT modify any existing code except for adding two lines of attributes.
 
-// I AM NOT DONE
+
 
 extern "Rust" {
     fn my_demo_function(a: u32) -> u32;
+    #[link_name = "my_demo_function"]
     fn my_demo_function_alias(a: u32) -> u32;
 }
 
 mod Foo {
+    #[no_mangle]
     // No `extern` equals `extern "Rust"`.
     fn my_demo_function(a: u32) -> u32 {
         a
